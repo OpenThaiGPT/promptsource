@@ -10,9 +10,9 @@ requirements = [
     "isort==5.8.0",
     "pytest",
     "pyyaml>=5",
-    "streamlit==0.82",
+    # "streamlit==0.82",
     "jinja2",
-    "plotly",
+    # "plotly",
     "requests",
     "pandas",
     ##############################################################
@@ -30,7 +30,7 @@ setup(
     url='https://github.com/bigscience-workshop/promptsource.git',
     author='BigScience - Prompt Engineering Working Group',
     author_email='sbach@cs.brown.edu,victor@huggingface.co',
-    python_requires='>=3.7,<3.10',
+    python_requires='>=3.7',
     install_requires=requirements,
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
