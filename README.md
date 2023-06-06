@@ -86,23 +86,42 @@ You can also collect all the available prompts for their associated datasets:
 You can learn more about PromptSource's API to store, manipulate and use prompts in the [documentation](API_DOCUMENTATION.md).
 
 ## How to create prompts
-PromptSource provides a Web-based GUI that enables developers to write prompts in a templating language and immediately view their outputs on different examples.
 
-There are 3 modes in the app:
-- **Sourcing**: create and write new prompts
-- **Prompted dataset viewer**: check the prompts you wrote (or the existing ones) on the entire dataset
-- **Helicopter view**: aggregate high-level metrics on the current state of P3
+```python
+from promptsource.templates import DatasetTemplates, Template
 
-<p align="center">
-  <img src="assets/promptsource_app.png" width="800"/>
-</p>
+dataset_name = "mmlu"
+template_name = "QA01"
 
-To launch the app locally, please first make sure you have followed the steps in [Setup](#setup), and from the root directory of the repo, run:
-```bash
-streamlit run promptsource/app.py
+text_jinja="""Answer the following question:
+{{question}} |||
+{{ choices[answer] }}"""
+
+answer_choices = '{{choices | join("|||")}}'
+reference = ""
+
+choices_in_prompt = True
+languages = ['en']
+metrics = ['Accuracy']
+original_task = True 
+
+ds_temp = DatasetTemplates(dataset_name)
+template = Template(template_name, "", "")
+ds_temp.add_template(template)
+
+template.metadata.choices_in_prompt = choices_in_prompt
+template.metadata.languages = languages
+template.metadata.metrics = metrics
+template.metadata.original_task = original_task
+
+ds_temp.update_template(current_template_name=template_name,
+                        new_template_name=template_name,
+                        jinja=text_jinja,
+                        reference=reference,
+                        metadata=template.metadata,
+                        answer_choices=answer_choices
+                        )
 ```
-
-You can also browse through existing prompts on the [hosted version of PromptSource](https://bigscience.huggingface.co/promptsource). Note the hosted version disables the Sourcing mode (`streamlit run promptsource/app.py -- --read-only`).
 
 ### Writing prompts
 Before creating new prompts, you should read the [contribution guidelines](CONTRIBUTING.md) which give an step-by-step description of how to contribute to the collection of prompts.
