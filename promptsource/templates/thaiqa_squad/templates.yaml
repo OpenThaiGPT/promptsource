@@ -1,0 +1,111 @@
+dataset: thaiqa_squad
+templates:
+  694d5171-a9c5-4fb9-92de-2a1d11b57de6: !Template
+    answer_choices: ''
+    id: 694d5171-a9c5-4fb9-92de-2a1d11b57de6
+    jinja: "Given the following passage\n\n\"{{context}}\"\n\nanswer the following\
+      \ question. \nNote that the answer is present within the text.\n\nQuestion:\
+      \ {{question}} |||\n{{ answers['answer'][0] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_eng
+    reference: ''
+  7106a6c7-9f45-433c-bf4c-99d160381cbe: !Template
+    answer_choices: ''
+    id: 7106a6c7-9f45-433c-bf4c-99d160381cbe
+    jinja: "\u0E08\u0E32\u0E01\u0E1A\u0E17\u0E04\u0E27\u0E32\u0E21\u0E14\u0E49\u0E32\
+      \u0E19\u0E25\u0E48\u0E32\u0E07\u0E19\u0E35\u0E49\n\n\"{{context}}\"\n\n\u0E08\
+      \u0E07\u0E15\u0E2D\u0E1A\u0E04\u0E33\u0E16\u0E32\u0E21\u0E1E\u0E23\u0E49\u0E2D\
+      \u0E21\u0E17\u0E31\u0E49\u0E07\u0E23\u0E30\u0E1A\u0E38\u0E15\u0E33\u0E41\u0E19\
+      \u0E48\u0E07\u0E02\u0E2D\u0E07\u0E04\u0E33\u0E15\u0E2D\u0E1A \u0E02\u0E2D\u0E07\
+      \u0E04\u0E33\u0E16\u0E32\u0E21\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49\
+      \n\n\u0E04\u0E33\u0E16\u0E32\u0E21: {{question}} |||\n\u0E04\u0E33\u0E15\u0E2D\
+      \u0E1A: {{ answers['answer'][0] }}\n\u0E15\u0E33\u0E41\u0E2B\u0E19\u0E48\u0E07\
+      \u0E40\u0E23\u0E34\u0E48\u0E21\u0E15\u0E49\u0E19: {{ answers['answer_begin_position'][0]\
+      \ }}\n\u0E15\u0E33\u0E41\u0E2B\u0E19\u0E48\u0E07\u0E2A\u0E34\u0E49\u0E19\u0E2A\
+      \u0E38\u0E14: {{ answers['answer_end_position'][0] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - th
+      metrics:
+      - Accuracy
+      original_task: false
+    name: qa_th_plus_position
+    reference: ''
+  8ea9a8f4-917c-4c9a-831a-a11dbda62f60: !Template
+    answer_choices: ''
+    id: 8ea9a8f4-917c-4c9a-831a-a11dbda62f60
+    jinja: "Given the following passage\n\n\"{{context}}\"\n\nFind the answer's position\
+      \ of the following question. \nNote that the answer is present within the text.\n\
+      \nQuestion: {{question}} |||\nstarting position: {{ answers['answer_begin_position'][0]\
+      \ }}, ending position: {{ answers['answer_end_position'][0] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: false
+    name: qa_eng_only_position
+    reference: ''
+  b69c03f6-cd5d-4f05-bb87-71f3266900e1: !Template
+    answer_choices: ''
+    id: b69c03f6-cd5d-4f05-bb87-71f3266900e1
+    jinja: "\u0E08\u0E32\u0E01\u0E1A\u0E17\u0E04\u0E27\u0E32\u0E21\u0E14\u0E49\u0E32\
+      \u0E19\u0E25\u0E48\u0E32\u0E07\u0E19\u0E35\u0E49\n\n\"{{context}}\"\n\n\u0E08\
+      \u0E07\u0E15\u0E2D\u0E1A\u0E04\u0E33\u0E16\u0E32\u0E21\u0E15\u0E48\u0E2D\u0E44\
+      \u0E1B\u0E19\u0E35\u0E49\n\n\u0E04\u0E33\u0E16\u0E32\u0E21: {{question}} |||\n\
+      \u0E04\u0E33\u0E15\u0E2D\u0E1A: {{ answers['answer'][0] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - th
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_th
+    reference: ''
+  b7bdab14-d017-48e5-a666-d507e70a4b3a: !Template
+    answer_choices: ''
+    id: b7bdab14-d017-48e5-a666-d507e70a4b3a
+    jinja: "Given the following passage\n\n\"{{context}}\"\n\nFind the answer and\
+      \ the answer's position of the following question. \nNote that the answer is\
+      \ present within the text.\n\nQuestion: {{question}} |||\nAnswer: {{ answers['answer'][0]\
+      \ }}\nstarting position: {{ answers['answer_begin_position'][0] }}\nending position:\
+      \ {{ answers['answer_end_position'][0] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: false
+    name: qa_eng_plus_position
+    reference: ''
+  d370ee34-3a0b-4a7b-a924-5c17f148f11a: !Template
+    answer_choices: ''
+    id: d370ee34-3a0b-4a7b-a924-5c17f148f11a
+    jinja: "\u0E08\u0E32\u0E01\u0E1A\u0E17\u0E04\u0E27\u0E32\u0E21\u0E14\u0E49\u0E32\
+      \u0E19\u0E25\u0E48\u0E32\u0E07\u0E19\u0E35\u0E49\n\n\"{{context}}\"\n\n\u0E08\
+      \u0E07\u0E2B\u0E32\u0E15\u0E33\u0E41\u0E19\u0E48\u0E07\u0E02\u0E2D\u0E07\u0E04\
+      \u0E33\u0E15\u0E2D\u0E1A\u0E02\u0E2D\u0E07\u0E04\u0E33\u0E16\u0E32\u0E21\u0E15\
+      \u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49\n\n\u0E04\u0E33\u0E16\u0E32\u0E21\
+      : {{question}} |||\n\u0E15\u0E33\u0E41\u0E2B\u0E19\u0E48\u0E07\u0E40\u0E23\u0E34\
+      \u0E48\u0E21\u0E15\u0E49\u0E19: {{ answers['answer_begin_position'][0] }}, \u0E15\
+      \u0E33\u0E41\u0E2B\u0E19\u0E48\u0E07\u0E2A\u0E34\u0E49\u0E19\u0E2A\u0E38\u0E14\
+      : {{ answers['answer_end_position'][0] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - th
+      metrics:
+      - Accuracy
+      original_task: false
+    name: qa_th_only_position
+    reference: ''

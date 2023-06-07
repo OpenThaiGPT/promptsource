@@ -1,0 +1,66 @@
+dataset: mmlu
+templates:
+  879ca1ea-d8ac-4a3e-9a7c-4527b4875838: !Template
+    answer_choices: (a) {{ choices[0] }}|||(b) {{ choices[1] }}|||(c) {{ choices[2]
+      }}|||(d) {{ choices[3] }}
+    id: 879ca1ea-d8ac-4a3e-9a7c-4527b4875838
+    jinja: "Question: {{question}}\nOptions:\n(a) {{ choices[0] }}\n(b) {{ choices[1]\
+      \ }}\n(c) {{ choices[2] }}\n(d) {{ choices[3] }}\n||| \n{{ answer_choices[answer]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_choices
+    reference: ''
+  9077febf-c1eb-4a63-b2f4-24369a4931d6: !Template
+    answer_choices: (a)|||(b)|||(c)|||(d)
+    id: 9077febf-c1eb-4a63-b2f4-24369a4931d6
+    jinja: "Question: {{question}}\nOptions:\n(a) {{ choices[0] }}\n(b) {{ choices[1]\
+      \ }}\n(c) {{ choices[2] }}\n(d) {{ choices[3] }}\n||| \n{{ answer_choices[answer]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_choices_answer_option_only
+    reference: ''
+  9db330c0-ae22-405b-a69a-0b215edbf9ff: !Template
+    answer_choices: (a) {{ choices[0] }}|||(b) {{ choices[1] }}|||(c) {{ choices[2]
+      }}|||(d) {{ choices[3] }}
+    id: 9db330c0-ae22-405b-a69a-0b215edbf9ff
+    jinja: "Please generate the question from the following options and the answer.\n\
+      Options:\n(a) {{ choices[0] }}\n(b) {{ choices[1] }}\n(c) {{ choices[2] }}\n\
+      (d) {{ choices[3] }}\n||| \nAnswer: {{ answer_choices[answer] }}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_question
+    reference: ''
+  b5565e8d-9511-43a9-87ac-040055fabb2d: !Template
+    answer_choices: '{{choices | join("|||")}}'
+    id: b5565e8d-9511-43a9-87ac-040055fabb2d
+    jinja: 'Answer the following question:
+
+      {{question}} |||
+
+      {{ choices[answer] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_without_choices
+    reference: ''

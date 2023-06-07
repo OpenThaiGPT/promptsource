@@ -1,0 +1,130 @@
+dataset: thaisum
+templates:
+  2492c0b5-1d0f-4bdb-b8bc-0e9c02ae1119: !Template
+    answer_choices: ''
+    id: 2492c0b5-1d0f-4bdb-b8bc-0e9c02ae1119
+    jinja: 'Generate a title for this dialogue:
+
+      {{ body }} |||
+
+      {{ title }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_title
+    reference: ''
+  44b317f0-5c3e-4d47-9b72-a4325148ad7a: !Template
+    answer_choices: ''
+    id: 44b317f0-5c3e-4d47-9b72-a4325148ad7a
+    jinja: "\u0E40\u0E02\u0E35\u0E22\u0E19\u0E2B\u0E31\u0E27\u0E40\u0E23\u0E37\u0E48\
+      \u0E2D\u0E07\u0E08\u0E32\u0E01\u0E1A\u0E17\u0E2A\u0E23\u0E38\u0E1B\u0E15\u0E48\
+      \u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49:\n{{ summary }} |||\n{{ title }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - th
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_title_from_summary_th
+    reference: ''
+  7da63499-d7de-4792-9aa3-508ec0e7d1e2: !Template
+    answer_choices: ''
+    id: 7da63499-d7de-4792-9aa3-508ec0e7d1e2
+    jinja: 'Generate a summary for this dialogue:
+
+      {{ body }} |||
+
+      {{ summary }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: generate_summary
+    reference: ''
+  91b3315f-c3f7-454e-b300-db44875f081a: !Template
+    answer_choices: ''
+    id: 91b3315f-c3f7-454e-b300-db44875f081a
+    jinja: 'Generate a title for this short dialogue:
+
+      {{ summary }} |||
+
+      {{ title }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_title_from_summary
+    reference: ''
+  9c84a97f-4d0a-48bc-8b95-66ebef4eddd2: !Template
+    answer_choices: ''
+    id: 9c84a97f-4d0a-48bc-8b95-66ebef4eddd2
+    jinja: "\u0E2A\u0E23\u0E38\u0E1B\u0E02\u0E49\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E08\
+      \u0E32\u0E01\u0E1A\u0E17\u0E04\u0E27\u0E32\u0E21\u0E15\u0E48\u0E2D\u0E44\u0E1B\
+      \u0E19\u0E35\u0E49:\n{{ body }} |||\n{{ summary }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - th
+      metrics:
+      - Accuracy
+      original_task: true
+    name: generate_summary_th
+    reference: ''
+  cbd4b5ae-f294-4d86-91a8-d01617eeb4a3: !Template
+    answer_choices: ''
+    id: cbd4b5ae-f294-4d86-91a8-d01617eeb4a3
+    jinja: "\u0E40\u0E02\u0E35\u0E22\u0E19\u0E2B\u0E31\u0E27\u0E40\u0E23\u0E37\u0E48\
+      \u0E2D\u0E07\u0E08\u0E32\u0E01\u0E1A\u0E17\u0E04\u0E27\u0E32\u0E21\u0E15\u0E48\
+      \u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49:\n{{ body }} |||\n{{ title }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - th
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_title_th
+    reference: ''
+  d8a759a5-6075-487e-bda1-be7f9c5993d5: !Template
+    answer_choices: ''
+    id: d8a759a5-6075-487e-bda1-be7f9c5993d5
+    jinja: "\u0E08\u0E07\u0E2B\u0E32 tags \u0E08\u0E32\u0E01\u0E1A\u0E17\u0E04\u0E27\
+      \u0E32\u0E21\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49:\n{{ body }} |||\n\
+      {{ tags }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - th
+      metrics:
+      - Accuracy
+      original_task: false
+    name: find_tags_th
+    reference: ''
+  d98f6c9f-b666-42f9-a8e2-c6ee7da90777: !Template
+    answer_choices: ''
+    id: d98f6c9f-b666-42f9-a8e2-c6ee7da90777
+    jinja: 'Find tags for this dialogue:
+
+      {{ body }} |||
+
+      {{ tags }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: false
+    name: find_tags
+    reference: ''

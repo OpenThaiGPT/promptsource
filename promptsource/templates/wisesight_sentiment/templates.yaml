@@ -1,0 +1,71 @@
+dataset: wisesight_sentiment
+templates:
+  59111db4-87f8-4b57-9bbe-95210dc8463e: !Template
+    answer_choices: Positive ||| Neutral ||| Negative
+    id: 59111db4-87f8-4b57-9bbe-95210dc8463e
+    jinja: 'Classify the sentiment expressed in the following message:
+
+      "{{texts}}" |||
+
+      {{ answer_choices[category] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_eng
+    reference: ''
+  667d1c6d-eb07-40e5-91c0-bbccc3b67303: !Template
+    answer_choices: "\u0E23\u0E39\u0E49\u0E2A\u0E36\u0E01\u0E14\u0E35 ||| \u0E23\u0E39\
+      \u0E49\u0E2A\u0E36\u0E01\u0E40\u0E09\u0E22\u0E46 ||| \u0E23\u0E39\u0E49\u0E2A\
+      \u0E36\u0E01\u0E44\u0E21\u0E48\u0E14\u0E35"
+    id: 667d1c6d-eb07-40e5-91c0-bbccc3b67303
+    jinja: "\u0E08\u0E32\u0E01\u0E02\u0E49\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E14\u0E49\
+      \u0E32\u0E19\u0E25\u0E48\u0E32\u0E07\u0E19\u0E35\u0E49 \u0E1C\u0E39\u0E49\u0E40\
+      \u0E02\u0E35\u0E22\u0E19\u0E23\u0E39\u0E49\u0E2A\u0E36\u0E01\u0E2D\u0E22\u0E48\
+      \u0E32\u0E07\u0E44\u0E23:\n\"{{texts}}\" |||\n{{ answer_choices[category] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - th
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_th
+    reference: ''
+  8f965fd4-27dc-46d9-ac6b-83438c7769c2: !Template
+    answer_choices: Positive ||| Neutral ||| Negative
+    id: 8f965fd4-27dc-46d9-ac6b-83438c7769c2
+    jinja: 'Is the sentiment in this "{{texts}}" Positive, Negative or Neutral?
+
+      |||
+
+      {{ answer_choices[category] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_eng_with_choices
+    reference: ''
+  fea9f47a-40df-4a98-90b6-e7e9d4a229cb: !Template
+    answer_choices: Positive ||| Neutral ||| Negative
+    id: fea9f47a-40df-4a98-90b6-e7e9d4a229cb
+    jinja: 'What emotions are conveyed in the following message:
+
+      "{{texts}}" |||
+
+      {{ answer_choices[category] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_eng2
+    reference: ''
